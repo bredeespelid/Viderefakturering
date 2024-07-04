@@ -30,6 +30,8 @@ def extract_data_from_pdf(pdf_path):
                     first_part, _, second_part = line.partition(" ")
                     if "15.00" in second_part:
                         second_part = second_part.replace("15.00", " ")
+                    if "25.00" in second_part:
+                        second_part = second_part.replace("25.00", " ")
                     second_part = " ".join(second_part.split())  # Remove double spaces
                     parts = second_part.rsplit(" ", 4)
                     if len(parts) == 5:
